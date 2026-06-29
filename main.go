@@ -6,7 +6,7 @@ import (
 	"os"
 	"math/rand"
 )
-	var ma=make(map[string]string)
+var ma=make(map[string]string)
 
 func hash(s string) string{
 	var r int64
@@ -16,12 +16,27 @@ func hash(s string) string{
 	return fmt.Sprintf("%x",r);
 }
 func main(){
-	fmt.Println("Enter the URL:")
-	ss:=bufio.NewReader(os.Stdin)
-	s,_:=ss.ReadString('\n')
-	s=strings.TrimSpace(s)
-	if _,ok:=ma[s];!ok{
-		ma[s]=hash(s)[:7]
+	outer:
+	for{
+		var ch rune
+		fmt.Println("1. Enter Y/y to get a shortened URL\n2. Enter N/n to exit")
+		fmt.Scanf("%c",&ch)
+		switch(ch){
+		case 'Y','y':
+			fmt.Println("Enter the URL:")
+			ss:=bufio.NewReader(os.Stdin)
+			ss.ReadString('\n')
+			s,_:=ss.ReadString('\n')
+			s=strings.TrimSpace(s)
+			if _,ok:=ma[s];!ok{
+				ma[s]=hash(s)[:7]
+			}
+			fmt.Println("Shortened URL is:",ma[s])
+		case 'N','n':
+			fmt.Println("Exiting...")
+			break outer
+		default:
+			fmt.Println("Enter character again")
+		}
 	}
-	fmt.Println("Shortened URL is:",ma[s])
 }
