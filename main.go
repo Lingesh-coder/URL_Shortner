@@ -5,8 +5,8 @@ import (
 	"bufio"
 	"os"
 	"math/rand"
+	ds "url/dss"
 )
-var ma=make(map[string]string)
 
 func hash(s string) string{
 	var r int64
@@ -28,10 +28,10 @@ func main(){
 			ss.ReadString('\n')
 			s,_:=ss.ReadString('\n')
 			s=strings.TrimSpace(s)
-			if _,ok:=ma[s];!ok{
-				ma[s]=hash(s)[:7]
+			if _,ok:=ds.Ma[s];!ok{
+				ds.Ma[s]=hash(s)[:7]
 			}
-			fmt.Println("Shortened URL is:",ma[s])
+			fmt.Println("Shortened URL is:",ds.Ma[s])
 		case 'N','n':
 			fmt.Println("Exiting...")
 			break outer
