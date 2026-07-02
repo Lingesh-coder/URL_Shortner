@@ -12,7 +12,6 @@ import (
 func Get_URL(){
 	fmt.Println("Enter the URL:")
 	ss:=bufio.NewReader(os.Stdin)
-	ss.ReadString('\n')
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
 	if _,ok:=ds.Ma[s];!ok{
