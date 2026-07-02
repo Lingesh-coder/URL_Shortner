@@ -15,7 +15,15 @@ func Get_URL(){
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
 	if _,ok:=ds.Ma[s];!ok{
-		ds.Ma[s]=hash.Hash(s)[:7]
+		er:=""
+		for {
+			er=hash.Hash()
+			if _,okk:=ds.Am[er];!okk{
+				break
+			}
+		}
+		ds.Ma[s]=er
+		ds.Am[er]=s
 	}
 	fmt.Println("Shortened URL is:",ds.Ma[s])
 }

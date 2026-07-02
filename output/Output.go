@@ -7,14 +7,12 @@ import (
 	"bufio"
 )
 
-func Put_URL() (string,bool) {
+func Put_URL() string {
 	ss:=bufio.NewReader(os.Stdin)
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
-	for i,j:=range ds.Ma{
-		if j==s{
-			return i,true
-		}
+	if y,ok:=ds.Am[s];ok{
+		return "Original URL is: "+y
 	}
-	return "NO URL found",false
+	return "NO URL found"
 }

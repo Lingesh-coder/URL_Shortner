@@ -15,12 +15,7 @@ func main(){
 		case 1:
 			get.Get_URL()
 		case 2:
-			d,b:=put.Put_URL()
-			if(b){
-				fmt.Println("Original URL:",d)
-			} else{
-				fmt.Println(d)
-			}
+			fmt.Println(put.Put_URL())
 		case 3:
 			fmt.Println("Exiting...")
 			break outer
