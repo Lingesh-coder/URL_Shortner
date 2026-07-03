@@ -7,13 +7,20 @@ import (
 	"strings"
 	"bufio"
 	"os"
+	//"regexp"
 )
+// Yet to use regexp
+func format(s string) string{
+	
+	return s
+}
 
 func Get_URL(){
 	fmt.Println("Enter the URL:")
 	ss:=bufio.NewReader(os.Stdin)
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
+	s=format(s)
 	if _,ok:=ds.Ma[s];!ok{
 		er:=""
 		for {

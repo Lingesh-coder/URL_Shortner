@@ -29,5 +29,5 @@ func Hash() string{
 			d=num(d)
 		}
 	}
-	return d
+	return "test.com/"+d
 }
