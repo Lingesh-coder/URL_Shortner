@@ -11,7 +11,6 @@ import (
 )
 // Yet to use regexp
 func format(s string) string{
-	
 	return s
 }
 
