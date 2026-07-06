@@ -21,6 +21,10 @@ func Get_URL(){
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
 	s=format(s)
+	if len(s)>ds.MaxURLLen{
+		fmt.Println("URL too long. Try again!!!")
+		Get_URL()
+	}
 	if _,ok:=ds.Ma[s];!ok{
 		er:=""
 		for {
