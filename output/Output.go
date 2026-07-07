@@ -14,6 +14,7 @@ func Put_URL() string {
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
 	if y,ok:=ds.Am[s];ok{
+		ds.AnalyticsMap[s]+=1
 		return "Original URL is: "+y
 	}
 	return "NO URL found"
