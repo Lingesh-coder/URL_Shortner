@@ -24,16 +24,37 @@ func Get_URL(){
 		fmt.Println("URL too long. Try again!!!")
 		Get_URL()
 	}
-	if _,ok:=ds.Ma[s];!ok{
-		er:=""
-		for {
-			er=hash.Hash()
-			if _,okk:=ds.Am[er];!okk{
-				break
-			}
-		}
-		ds.Ma[s]=er
-		ds.Am[er]=s
+	if _,ok:=ds.Ma[s];ok{
+		fmt.Println("Shortened URL is:",ds.Ma[s])
+		return
 	}
+	outer:
+	for{
+	fmt.Println("1. Enter 1 to get a custom URL\n2. Enter 2 to get a random and short URL")
+	var b int
+	fmt.Scan(&b)
+	switch(b){
+		case 1: 
+			fmt.Println("Enter custom link")
+			er,_:=ss.ReadString('\n')
+			er="test.com/"+strings.TrimSpace(er)
+			ds.Ma[s]=er
+			ds.Am[er]=s
+			break outer
+		case 2: 
+			er:=""
+			for {
+				er=hash.Hash()
+				if _,okk:=ds.Am[er];!okk{
+					break
+				}
+			}
+			ds.Ma[s]=er
+			ds.Am[er]=s
+			break outer
+		default:
+			fmt.Println("Invalid input.Retry again!!!")
+	}
+}
 	fmt.Println("Shortened URL is:",ds.Ma[s])
 }
