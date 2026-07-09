@@ -7,11 +7,9 @@ import (
 	"strings"
 	"bufio"
 	"os"
-	//"regexp"
 )
-// Yet to use regexp
-func format(s string) string{
-	return s
+func format(s string) bool{
+	return ds.DomainCheck.MatchString(s)
 }
 
 func Get_URL(){
@@ -19,7 +17,12 @@ func Get_URL(){
 	ss:=bufio.NewReader(os.Stdin)
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
-	s=format(s)
+	xd:=format(s)
+	if !xd{
+		fmt.Println("Use a domain name")
+		Get_URL()
+		return
+	}
 	if len(s)>ds.MaxURLLen{
 		fmt.Println("URL too long. Try again!!!")
 		Get_URL()
@@ -35,7 +38,7 @@ func Get_URL(){
 	fmt.Scan(&b)
 	switch(b){
 		case 1: 
-			fmt.Println("Enter custom link")
+			fmt.Println("Enter alias. Not the entire link again")
 			er,_:=ss.ReadString('\n')
 			er="test.com/"+strings.TrimSpace(er)
 			ds.Ma[s]=er
