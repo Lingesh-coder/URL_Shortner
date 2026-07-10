@@ -2,8 +2,8 @@ package hashing
 
 import (
 	"math/rand"
+	ds "url/dss"
 )
-var size int=6
 
 func big(s string) string{
 	return s+string(rand.Intn(26)+65)
@@ -19,7 +19,7 @@ func num(s string) string{
 
 func Hash() string{
 	d:=""
-	for i:=0;i<size;i++{
+	for i:=0;i<ds.Size;i++{
 		e:=rand.Intn(3)
 		if e==1{
 			d=big(d)
