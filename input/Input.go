@@ -7,9 +7,14 @@ import (
 	"strings"
 	"bufio"
 	"os"
+	"errors"
 )
-func format(s string) bool{
-	return ds.DomainCheck.MatchString(s)
+func format(s string) error {
+	if ds.DomainCheck.MatchString(s){
+		return nil
+	} else{
+		return errors.New("Format error")
+	}
 }
 
 func Get_URL(){
@@ -18,8 +23,8 @@ func Get_URL(){
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
 	xd:=format(s)
-	if !xd{
-		fmt.Println("Use a domain name")
+	if xd!=nil{
+		fmt.Println(xd)
 		Get_URL()
 		return
 	}
