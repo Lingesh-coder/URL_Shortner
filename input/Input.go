@@ -7,22 +7,15 @@ import (
 	"strings"
 	"bufio"
 	"os"
-	"errors"
+	er "url/errors"
 )
-func format(s string) error {
-	if ds.DomainCheck.MatchString(s){
-		return nil
-	} else{
-		return errors.New("Format error")
-	}
-}
 
 func Get_URL(){
 	fmt.Println("Enter the URL:")
 	ss:=bufio.NewReader(os.Stdin)
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
-	xd:=format(s)
+	xd:=er.Format(s)
 	if xd!=nil{
 		fmt.Println(xd)
 		Get_URL()
