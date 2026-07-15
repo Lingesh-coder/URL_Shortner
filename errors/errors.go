@@ -10,3 +10,9 @@ func Format(s string) error {
 		return errors.New("Format error")
 	}
 }
+func LengthURL(s string) error{
+	if len(s)>ds.MaxURLLen{
+		return errors.New("URL too long.")
+	}
+	return nil
+}

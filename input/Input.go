@@ -15,15 +15,17 @@ func Get_URL(){
 	ss:=bufio.NewReader(os.Stdin)
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
-	xd:=er.Format(s)
+	xd:=er.LengthURL(s)
 	if xd!=nil{
 		fmt.Println(xd)
 		Get_URL()
 		return
 	}
-	if len(s)>ds.MaxURLLen{
-		fmt.Println("URL too long. Try again!!!")
+	xd=er.Format(s)
+	if xd!=nil{
+		fmt.Println(xd)
 		Get_URL()
+		return
 	}
 	if _,ok:=ds.Ma[s];ok{
 		fmt.Println("Shortened URL is:",ds.Ma[s])
