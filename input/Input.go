@@ -15,7 +15,13 @@ func Get_URL(){
 	ss:=bufio.NewReader(os.Stdin)
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
-	xd:=er.LengthURL(s)
+	xd:=er.SpacePresent(s)
+	if(xd!=nil){
+		fmt.Println(xd)
+		Get_URL()
+		return
+	}
+	xd=er.LengthURL(s)
 	if xd!=nil{
 		fmt.Println(xd)
 		Get_URL()
