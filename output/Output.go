@@ -6,6 +6,7 @@ import (
 	"strings"
 	"bufio"
 	"fmt"
+	er "url/errors"
 )
 
 func Put_URL() string {
@@ -13,6 +14,11 @@ func Put_URL() string {
 	ss:=bufio.NewReader(os.Stdin)
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
+	xd:=er.LengthShortURL(s)
+	if xd!=nil{
+		fmt.Println(xd)
+		Put_URL()
+	}
 	if y,ok:=ds.Am[s];ok{
 		ds.AnalyticsMap[s]++
 		return "Original URL is: "+y

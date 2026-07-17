@@ -25,3 +25,10 @@ func SpacePresent(s string) error{
 	}
 	return nil
 }
+
+func LengthShortURL(s string) error{
+	if len(s)!=ds.Size{
+		return errors.New("Short URL must be exactly "+string(ds.Size+48)+" characters long.")
+	}
+	return nil
+}
