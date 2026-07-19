@@ -1,4 +1,5 @@
 package analytics
+
 import(
 	"fmt"
 	"bufio"
