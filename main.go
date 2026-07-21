@@ -19,7 +19,12 @@ func main(){
 		case 2:
 			fmt.Println(put.Put_URL())
 		case 3:
-			fmt.Println(ana.Analytics());
+			xd,dx:=ana.Analytics()
+			if dx!=nil{
+				fmt.Println(dx)
+			} else{
+				fmt.Println(xd);
+			}
 		case 4:
 			fmt.Println("Exiting...")
 			break outer

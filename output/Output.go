@@ -17,7 +17,7 @@ func Put_URL() string {
 	xd:=er.LengthShortURL(s)
 	if xd!=nil{
 		fmt.Println(xd)
-		Put_URL()
+		return Put_URL()
 	}
 	if y,ok:=ds.Am[s];ok{
 		ds.AnalyticsMap[s]++
