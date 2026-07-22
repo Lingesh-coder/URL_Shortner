@@ -19,6 +19,11 @@ func Put_URL() string {
 		fmt.Println(xd)
 		return Put_URL()
 	}
+	xd=er.SpacePresent(s)
+	if xd!=nil{
+		fmt.Println(xd)
+		return Put_URL()
+	}
 	if y,ok:=ds.Am[s];ok{
 		ds.AnalyticsMap[s]++
 		return "Original URL is: "+y
