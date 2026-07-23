@@ -20,7 +20,7 @@ func num(s string) string{
 func Hash() string{
 	d:=""
 	for i:=0;i<ds.Size;i++{
-		e:=rand.Intn(3)
+		e := rand.Intn(3)
 		if e==1{
 			d=big(d)
 		} else if e==2{
