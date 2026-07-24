@@ -46,6 +46,10 @@ func Get_URL(){
 		case 1: 
 			fmt.Println("Enter alias. Not the entire link again")
 			er,_:=ss.ReadString('\n')
+			if len(er) < ds.Size {
+				fmt.Println("It must be at least 6 characters")
+				continue
+			}
 			er="test.com/"+strings.TrimSpace(er)
 			ds.Ma[s]=er
 			ds.Am[er]=s
