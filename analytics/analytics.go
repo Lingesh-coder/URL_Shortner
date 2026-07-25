@@ -17,5 +17,6 @@ func Analytics() (string,error) {
 	if _,ok:=ds.Am[s];!ok{
 		return "The short link does not exist",errors.New("404. Not Found")
 	}
+	
 	return (s + " is viewed "+string(ds.AnalyticsMap[s]+48) + " time(s)"),nil
 }
