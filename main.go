@@ -29,7 +29,7 @@ func main(){
 			fmt.Println("Exiting...")
 			break outer
 		default:
-			fmt.Println("Invalid input. Try again!!")
+			fmt.Println("Enter 1 to 4. Try again!!")
 		}
 	}
 }
