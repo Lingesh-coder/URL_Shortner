@@ -5,6 +5,7 @@ import (
 	get "url/input"
 	put "url/output"
 	ana "url/analytics"
+	"time"
 )
 
 func main(){
@@ -27,6 +28,7 @@ func main(){
 			}
 		case 4:
 			fmt.Println("Exiting...")
+			time.Sleep(2000000000)
 			break outer
 		default:
 			fmt.Println("Enter 1 to 4. Try again!!")
