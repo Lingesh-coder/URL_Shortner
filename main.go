@@ -28,7 +28,7 @@ func main(){
 			}
 		case 4:
 			fmt.Println("Exiting...")
-			time.Sleep(2000000000)
+			time.Sleep(2500000000)
 			break outer
 		default:
 			fmt.Println("Enter 1 to 4. Try again!!")
