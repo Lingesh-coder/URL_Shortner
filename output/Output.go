@@ -15,7 +15,7 @@ func Put_URL() string {
 	s,_:=ss.ReadString('\n')
 	s=strings.TrimSpace(s)
 	if !ds.ShortURLRegex.MatchString(s){
-		fmt.Println("Use test.com/ and then the 6 character URL")
+		fmt.Println("Use test.com/ and then the 6 characters if it is not a custom URL")
 		return Put_URL()
 	}
 	xd:=er.LengthShortURL(s)
