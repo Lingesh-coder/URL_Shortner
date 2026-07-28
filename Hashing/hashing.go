@@ -21,11 +21,11 @@ func Hash() string{
 	d:=""
 	for i:=0;i<ds.Size;i++{
 		e := rand.Intn(3)
-		if e==1{
+		if e==1 {
 			d=big(d)
-		} else if e==2{
+		} else if e==2 {
 			d=small(d)
-		} else{
+		} else {
 			d=num(d)
 		}
 	}
