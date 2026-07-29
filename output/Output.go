@@ -18,12 +18,7 @@ func Put_URL() string {
 		fmt.Println("Use test.com/ and then the 6 characters if it is not a custom URL")
 		return Put_URL()
 	}
-	xd:=er.LengthShortURL(s)
-	if xd!=nil{
-		fmt.Println(xd)
-		return Put_URL()
-	}
-	xd=er.SpacePresent(s)
+	xd:=er.SpacePresent(s)
 	if xd!=nil{
 		fmt.Println(xd)
 		return Put_URL()
