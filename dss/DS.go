@@ -9,4 +9,4 @@ var MaxURLLen int = 50
 var Size int=6
 var DomainCheck = regexp.MustCompile(`^https:\/\/[A-Za-z0-9.-]+\.[A-Za-z]{2,64}`)
 var ShortURLRegex = regexp.MustCompile(`^test.com\/`)
-var CustomURLRegex = regexp.MustCompile(`^[A-Za-z]{10,15}$`)
+var CustomURLRegex = regexp.MustCompile(`^[A-Za-z]{10,20}$`)
