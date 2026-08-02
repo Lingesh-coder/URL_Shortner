@@ -10,7 +10,7 @@ import (
 
 func main(){
 	outer:
-	for{
+	for {
 		var a int
 		fmt.Println("1. Enter 1 to get a shortened URL\n2. Enter 2 to retrieve the Original URL\n3. Enter 3 to view analytics\n4. Enter 4 to exit")
 		fmt.Scan(&a)
