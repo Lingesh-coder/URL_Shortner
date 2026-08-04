@@ -14,7 +14,7 @@ func Analytics() (string,error) {
 	scan := bufio.NewReader(os.Stdin)
 	s,_ := scan.ReadString('\n')
 	s = strings.TrimSpace(s)
-	if _,ok:=ds.Am[s];!ok{
+	if _,ok := ds.Am[s] ; !ok{
 		return "The short link does not exist",errors.New("404. Not Found")
 	}
 	
