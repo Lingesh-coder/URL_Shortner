@@ -5,7 +5,7 @@ import (
 	"strings"
 	"bufio"
 	"fmt"
-	er "url/errors"
+	ds "url/dss"
 )
 
 func Put_URL() string {
