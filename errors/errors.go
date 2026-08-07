@@ -7,6 +7,7 @@ import (
 	"bufio"
 	"strings"
 )
+
 func TextToInteger() (int,error){
 	scan:=bufio.NewReader(os.Stdin)
 	scanner,_:=scan.ReadString('\n')
@@ -17,6 +18,7 @@ func TextToInteger() (int,error){
 	}
 	return r,nil
 }
+
 func Format(s string) error {
 	if ds.DomainCheck.MatchString(s){
 		return nil
@@ -24,6 +26,7 @@ func Format(s string) error {
 		return errors.New("Format error")
 	}
 }
+
 func LengthURL(s string) error{
 	if len(s)>ds.MaxURLLen{
 		return errors.New("URL too long.")
