@@ -40,8 +40,11 @@ func Get_URL(){
 	outer:
 	for{
 	fmt.Println("1. Enter 1 to get a custom URL\n2. Enter 2 to get a random and short URL")
-	var b int
-	fmt.Scan(&b)
+	b,err:=er.TextToInteger()
+	if(err!=nil){
+		fmt.Println(err)
+		continue
+	}
 	switch(b){
 		case 1: 
 			fmt.Println("Enter alias. Not the entire link again")
