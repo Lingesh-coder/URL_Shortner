@@ -18,15 +18,15 @@ func num(s string) string{
 }
 
 func Hash() string{
-	d:=""
+	d := ""
 	for i:=0;i<ds.Size;i++{
 		e := rand.Intn(3)
 		if e==1 {
-			d=big(d)
+			d = big(d)
 		} else if e==2 {
-			d=small(d)
+			d = small(d)
 		} else {
-			d=num(d)
+			d = num(d)
 		}
 	}
 	return "test.com/"+d
