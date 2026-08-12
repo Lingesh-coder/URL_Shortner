@@ -20,9 +20,9 @@ func num(s string) string{
 func Hash() string{
 	d := ""
 	for i:=0;i<ds.Size;i++{
-		if i%3==1 {
+		if i%3 == 1 {
 			d = big(d)
-		} else if i%3==2 {
+		} else if i%3 == 2 {
 			d = small(d)
 		} else {
 			d = num(d)
