@@ -6,15 +6,15 @@ import (
 )
 
 func big(s string) string{
-	return s+string(rand.Intn(26)+65)
+	return s + string(rand.Intn(26)+65)
 }
 
 func small(s string) string{
-	return s+string(rand.Intn(26)+97)
+	return s + string(rand.Intn(26)+97)
 }
 
 func num(s string) string{
-	return s+string(rand.Intn(10)+48)
+	return s + string(rand.Intn(10)+48)
 }
 
 func Hash() string{
