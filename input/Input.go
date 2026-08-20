@@ -1,77 +1,77 @@
 package input
 
 import (
-	"fmt"
-	ds "url/dss"
-	hash "url/Hashing"
-	"strings"
 	"bufio"
+	"fmt"
 	"os"
+	"strings"
+	hash "url/Hashing"
+	ds "url/dss"
 	er "url/errors"
 )
 
-func Get_URL(){
+func Get_URL() {
 	fmt.Println("Enter the URL:")
 	ss := bufio.NewReader(os.Stdin)
-	s,_ := ss.ReadString('\n')
+	s, _ := ss.ReadString('\n')
 	s = strings.TrimSpace(s)
 	xd := er.SpacePresent(s)
-	if(xd!=nil){
+	if xd != nil {
 		fmt.Println(xd)
 		Get_URL()
 		return
 	}
-	xd=er.LengthURL(s)
-	if xd!=nil{
+	xd = er.LengthURL(s)
+	if xd != nil {
 		fmt.Println(xd)
 		Get_URL()
 		return
 	}
-	xd=er.Format(s)
-	if xd!=nil{
+	xd = er.Format(s)
+	if xd != nil {
 		fmt.Println(xd)
 		Get_URL()
 		return
 	}
-	if _,ok:=ds.Ma[s];ok{
-		fmt.Println("Shortened URL is:",ds.Ma[s])
+	if _, ok := ds.Ma[s]; ok {
+		fmt.Println("Shortened URL is:", ds.Ma[s])
 		return
 	}
-	outer:
-	for{
-	fmt.Println("1. Enter 1 to get a custom URL\n2. Enter 2 to get a random and short URL")
-	b,err:=er.TextToInteger()
-	if(err!=nil){
-		fmt.Println(err)
-		continue
-	}
-	switch(b){
-		case 1: 
+outer:
+	for {
+		fmt.Println("1. Enter 1 to get a custom URL\n2. Enter 2 to get a random and short URL")
+		b, err := er.TextToInteger()
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		switch b {
+		case 1:
 			fmt.Println("Enter alias. Not the entire link again")
-			er,_:=ss.ReadString('\n')
-			er=strings.TrimSpace(er)
-			if !ds.CustomURLRegex.MatchString(er){
+			er, _ := ss.ReadString('\n')
+			er = strings.TrimSpace(er)
+			if !ds.CustomURLRegex.MatchString(er) {
 				fmt.Println("Only A-Z and a-z characters are allowed and the length should be between 6 and 15")
 				continue
 			}
-			er="test.com/"+strings.TrimSpace(er)
-			ds.Ma[s]=er
-			ds.Am[er]=s
+			er = "test.com/" + strings.TrimSpace(er)
+			ds.Ma[s] = er
+			ds.Am[er] = s
 			break outer
-		case 2: 
-			er:=""
+		case 2:
+			er := ""
 			for {
-				er=hash.Hash()
-				if _,okk:=ds.Am[er];!okk{
+				er = hash.Hash()
+				if _, okk := ds.Am[er]; !okk {
 					break
 				}
 			}
-			ds.Ma[s]=er
-			ds.Am[er]=s
+			ds.Ma[s] = er
+			ds.Am[er] = s
 			break outer
 		default:
 			fmt.Println("Invalid input.Retry again!!!")
+		}
 	}
-}
-	fmt.Println("Shortened URL is:",ds.Ma[s])
+	fmt.Println("Shortened URL is:", ds.Ma[s])
 }
