@@ -24,7 +24,7 @@ func Format(s string) error {
 	if ds.DomainCheck.MatchString(s) {
 		return nil
 	} else {
-		return errors.New("Format error")
+		return errors.New("Format error. It must start with https:// then the website followed by domain")
 	}
 }
 
