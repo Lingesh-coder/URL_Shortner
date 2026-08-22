@@ -1,5 +1,4 @@
 package analytics
-
 import (
 	"bufio"
 	"errors"
