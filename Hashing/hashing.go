@@ -1,5 +1,4 @@
 package hashing
-
 import (
 	"math/rand"
 	ds "url/dss"
