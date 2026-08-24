@@ -55,6 +55,11 @@ outer:
 				continue
 			}
 			er = "test.com/" + strings.TrimSpace(er)
+			_, ok := ds.Am[er];
+			if(ok){
+				fmt.Println("This custom string is already taken. Try another one.");
+				continue outer;
+			}
 			ds.Ma[s] = er
 			ds.Am[er] = s
 			break outer
