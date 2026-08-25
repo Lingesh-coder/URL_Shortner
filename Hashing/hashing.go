@@ -16,5 +16,10 @@ func Hash() string {
 			d += string(rune(rand.Intn(10) + '0'))
 		}
 	}
-	return "test.com/" + d
+	d = "test.com/" + d
+	if _,kk:=ds.Am[d];kk{
+		Hash()
+		return ""
+	}
+	return d
 }
