@@ -17,7 +17,7 @@ func Hash() string {
 		}
 	}
 	d = "test.com/" + d
-	if _,kk:=ds.Am[d];kk{
+	if _,kk:=ds.ShortUrl[d];kk{
 		Hash()
 		return ""
 	}

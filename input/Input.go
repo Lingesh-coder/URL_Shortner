@@ -33,8 +33,8 @@ func Get_URL() {
 		Get_URL()
 		return
 	}
-	if _, ok := ds.Ma[s]; ok {
-		fmt.Println("Shortened URL is:", ds.Ma[s])
+	if _, ok := ds.LongUrl[s]; ok {
+		fmt.Println("Shortened URL is:", ds.LongUrl[s])
 		return
 	}
 outer:
@@ -55,28 +55,28 @@ outer:
 				continue
 			}
 			er = "test.com/" + strings.TrimSpace(er)
-			_, ok := ds.Am[er];
+			_, ok := ds.ShortUrl[er];
 			if(ok){
 				fmt.Println("This custom string is already taken. Try another one.");
 				continue outer;
 			}
-			ds.Ma[s] = er
-			ds.Am[er] = s
+			ds.LongUrl[s] = er
+			ds.ShortUrl[er] = s
 			break outer
 		case 2:
 			er := ""
 			for {
 				er = hash.Hash()
-				if _, okk := ds.Am[er]; !okk {
+				if _, okk := ds.ShortUrl[er]; !okk {
 					break
 				}
 			}
-			ds.Ma[s] = er
-			ds.Am[er] = s
+			ds.LongUrl[s] = er
+			ds.ShortUrl[er] = s
 			break outer
 		default:
 			fmt.Println("Invalid input.Retry again!!!")
 		}
 	}
-	fmt.Println("Shortened URL is:", ds.Ma[s])
+	fmt.Println("Shortened URL is:", ds.LongUrl[s])
 }
