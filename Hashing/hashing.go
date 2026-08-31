@@ -5,21 +5,21 @@ import (
 )
 
 func Hash() string {
-	d := ""
+	shortUrlString := ""
 	for i := 0; i < ds.Size; i++ {
 		switch i % 3 {
 		case 1:
-			d += string(rune(rand.Intn(26) + 'A'))
+			shortUrlString += string(rune(rand.Intn(26) + 'A'))
 		case 2:
-			d += string(rune(rand.Intn(26) + 'a'))
+			shortUrlString += string(rune(rand.Intn(26) + 'a'))
 		default:
-			d += string(rune(rand.Intn(10) + '0'))
+			shortUrlString += string(rune(rand.Intn(10) + '0'))
 		}
 	}
-	d = "test.com/" + d
-	if _,kk:=ds.ShortUrl[d];kk{
+	shortUrlString = "test.com/" + shortUrlString
+	if _,kk:=ds.ShortUrl[shortUrlString];kk{
 		Hash()
 		return ""
 	}
-	return d
+	return shortUrlString
 }
