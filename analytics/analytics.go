@@ -8,7 +8,6 @@ import (
 	"strings"
 	ds "url/dss"
 )
-
 func Analytics() (string, error) {
 	fmt.Println("Enter shortURL to view analytics")
 	scan := bufio.NewReader(os.Stdin)
