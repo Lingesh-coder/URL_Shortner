@@ -37,7 +37,7 @@ func LengthURL(s string) error {
 
 func SpacePresent(s string) error {
 	for _, ch := range s {
-		if ch == ' ' {
+		if ch == ' '{
 			return errors.New("Blank space found in URL")
 		}
 	}
