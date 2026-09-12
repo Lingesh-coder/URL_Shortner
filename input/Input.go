@@ -56,7 +56,7 @@ outer:
 			}
 			er = "test.com/" + strings.TrimSpace(er)
 			_, ok := ds.ShortUrl[er];
-			if(ok){
+			if(ok) {
 				fmt.Println("This custom string is already taken. Try another one.");
 				continue outer;
 			}
