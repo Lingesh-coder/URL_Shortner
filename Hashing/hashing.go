@@ -3,7 +3,6 @@ import (
 	"math/rand"
 	ds "url/dss"
 )
-
 func Hash() string {
 	shortUrlString := ""
 	for i := 0; i < ds.Size; i++ {
