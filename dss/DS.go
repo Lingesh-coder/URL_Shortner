@@ -1,6 +1,6 @@
 package dss
-
 import "regexp"
+
 var LongUrl = make(map[string]string)
 var ShortUrl = make(map[string]string)
 var AnalyticsMap = make(map[string]int)
