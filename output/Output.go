@@ -1,4 +1,5 @@
 package output
+
 import (
 	"bufio"
 	"fmt"
@@ -6,6 +7,7 @@ import (
 	"strings"
 	ds "url/dss"
 )
+
 func Put_URL() string {
 	fmt.Println("Enter shortened URL:")
 	ss := bufio.NewReader(os.Stdin)
