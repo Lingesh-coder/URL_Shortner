@@ -1,4 +1,5 @@
 package main
+
 import (
 	"fmt"
 	ana "url/analytics"
@@ -6,6 +7,7 @@ import (
 	get "url/input"
 	put "url/output"
 )
+
 func main() {
 outer:
 	for {
