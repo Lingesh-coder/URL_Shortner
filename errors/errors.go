@@ -13,7 +13,7 @@ func TextToInteger() (int, error) {
 	scanner, _ := scan.ReadString('\n')
 	scanner = strings.TrimSpace(scanner)
 	r, err := strconv.Atoi(scanner)
-	if err != nil {
+	if err != nil{
 		return 0, errors.New("Enter numbers only")
 	}
 	return r, nil
