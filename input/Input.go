@@ -75,7 +75,7 @@ outer:
 			ds.ShortUrl[er] = s
 			break outer
 		default:
-			fmt.Println("Invalid input.Retry again!!!")
+			fmt.Println("Invalid input. Retry again!!!")
 		}
 	}
 	fmt.Println("Shortened URL is:", ds.LongUrl[s])
