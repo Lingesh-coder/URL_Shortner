@@ -10,8 +10,8 @@ import (
 
 func Put_URL() string {
 	fmt.Println("Enter shortened URL:")
-	ss := bufio.NewReader(os.Stdin)
-	s, _ := ss.ReadString('\n')
+	ss:=bufio.NewReader(os.Stdin)
+	s,_:=ss.ReadString('\n')
 	s = strings.TrimSpace(s)
 	if y, ok := ds.ShortUrl[s]; ok {
 		ds.AnalyticsMap[s]++
