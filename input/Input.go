@@ -40,7 +40,7 @@ func Get_URL() {
 outer:
 	for {
 		fmt.Println("1. Enter 1 to get a custom URL\n2. Enter 2 to get a random and short URL")
-		b, err := er.TextToInteger()
+		b, err:=er.TextToInteger()
 		if err != nil {
 			fmt.Println(err)
 			continue
