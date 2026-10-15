@@ -5,6 +5,7 @@ import (
 )
 func Hash() string {
 	shortUrlString := ""
+	
 	for i := 0; i < ds.Size; i++ {
 		switch i % 3 {
 		case 1:
