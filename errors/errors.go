@@ -11,6 +11,7 @@ import (
 
 func TextToInteger() (int, error) {
 	scan := bufio.NewReader(os.Stdin)
+	
 	scanner, _ := scan.ReadString('\n')
 	scanner = strings.TrimSpace(scanner)
 	r, err := strconv.Atoi(scanner)
