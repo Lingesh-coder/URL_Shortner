@@ -33,6 +33,7 @@ func LengthURL(s string) error {
 	if len(s) > ds.MaxURLLen {
 		return errors.New("URL too long.")
 	}
+	
 	return nil
 }
 
