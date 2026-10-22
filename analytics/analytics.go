@@ -12,6 +12,7 @@ import (
 
 func Analytics() (string, error) {
 	fmt.Println("Enter shortURL to view analytics")
+	
 	scan:=bufio.NewReader(os.Stdin)
 	str, _:=scan.ReadString('\n')
 	str=strings.TrimSpace(str)
