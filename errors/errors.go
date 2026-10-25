@@ -11,13 +11,13 @@ import (
 
 func TextToInteger() (int, error) {
 	scan := bufio.NewReader(os.Stdin)
-	
 	scanner, _ := scan.ReadString('\n')
 	scanner = strings.TrimSpace(scanner)
 	r, err := strconv.Atoi(scanner)
 	if err != nil{
 		return 0, errors.New("Enter numbers only")
 	}
+	
 	return r, nil
 }
 
