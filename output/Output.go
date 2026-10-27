@@ -17,5 +17,6 @@ func Put_URL() string {
 		ds.AnalyticsMap[s]++
 		return "Original URL is: " + y
 	}
+	
 	return "NO URL found"
 }
