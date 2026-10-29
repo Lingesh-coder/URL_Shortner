@@ -17,6 +17,7 @@ func Hash() string {
 	}
 	shortUrlString = "test.com/" + shortUrlString
 	if _,kk := ds.ShortUrl[shortUrlString];kk{
+		
 		Hash()
 		return ""
 	}
