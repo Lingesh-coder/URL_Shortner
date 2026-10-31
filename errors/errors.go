@@ -16,11 +16,9 @@ func TextToInteger() (int, error) {
 	r, err := strconv.Atoi(scanner)
 	if err != nil{
 		return 0, errors.New("Enter numbers only")
-	}
-	
+	}	
 	return r, nil
 }
-
 func Format(s string) error {
 	if ds.DomainCheck.MatchString(s) {
 		return nil
