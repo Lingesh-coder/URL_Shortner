@@ -21,9 +21,7 @@ func Get_URL() {
 		Get_URL()
 		return
 	}
-	
 	xd = er.LengthURL(s)
-	
 	if xd != nil {
 		fmt.Println(xd)
 		Get_URL()
