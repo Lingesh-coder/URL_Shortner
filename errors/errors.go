@@ -8,7 +8,6 @@ import (
 	"strings"
 	ds "url/dss"
 )
-
 func TextToInteger() (int, error) {
 	scan := bufio.NewReader(os.Stdin)
 	scanner, _ := scan.ReadString('\n')
