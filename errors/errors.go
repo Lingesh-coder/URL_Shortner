@@ -17,6 +17,7 @@ func TextToInteger() (int, error) {
 	}	
 	return r, nil
 }
+
 func Format(s string) error {
 	if ds.DomainCheck.MatchString(s) {
 		return nil
@@ -24,6 +25,7 @@ func Format(s string) error {
 		return errors.New("\nFormat error. It must start with https:// then the website name followed by domain. \nFor example: https://youtube.com\n")
 	}
 }
+
 func LengthURL(s string) error {
 	if len(s) > ds.MaxURLLen {
 		return errors.New("URL too long.")
