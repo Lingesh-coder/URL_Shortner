@@ -1,5 +1,4 @@
 package input
-
 import (
 	"bufio"
 	"fmt"
@@ -9,7 +8,6 @@ import (
 	ds "url/dss"
 	er "url/errors"
 )
-
 func Get_URL() {
 	fmt.Println("Enter the URL:")
 	ss := bufio.NewReader(os.Stdin)
