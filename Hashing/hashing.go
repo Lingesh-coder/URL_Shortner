@@ -7,6 +7,7 @@ import (
 
 func Hash() string {
 	shortUrlString := ""
+	
 	for i := 0; i < ds.Size; i++ {
 		switch i % 3 {
 		case 1:
@@ -17,7 +18,9 @@ func Hash() string {
 			shortUrlString += string(rune(rand.Intn(10) + '0'))
 		}
 	}
+	
 	shortUrlString = "test.com/" + shortUrlString
+	
 	if _,kk := ds.ShortUrl[shortUrlString];kk{
 		
 		Hash()
